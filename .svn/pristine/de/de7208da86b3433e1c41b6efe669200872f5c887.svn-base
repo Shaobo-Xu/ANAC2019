@@ -1,0 +1,131 @@
+\begin{thebibliography}{10}
+
+\bibitem{MultilateralOffersProtocols}
+Reyhan Aydogan, David Festen, Koen~V. Hindriks, and Catholijn~M. Jonker.
+\newblock Alternating offers protocols for multilateral negotiation.
+\newblock {\em Modern Approaches to Agent-based Complex Automated Negotiation},
+  2014.
+
+\bibitem{MultiMediatedNegoProtocolsWithFeedback}
+Reyhan Aydogan, Koen~V. Hindriks, and Catholijn~M. Jonker.
+\newblock Multilateral mediated negotiation protocols with feedback.
+\newblock In I.~Marsa-Maestre, M.~A. Lopez-Carmona, T.~Ito, M.~Zhang, Q.~Bai,
+  and K.~Fujita, editors, {\em Novel Insights in Agent based Complex Automated
+  Negotiation, Chapter: Multilateral Mediated Negotiation Protocols with
+  Feedback}, chapter~3, pages 43--59. Springer, 2014.
+
+\bibitem{Ayd14}
+Reyhan Aydo\u{g}an, Tim Baarslag, Koen~V. Hindriks, Catholijn~M. Jonker, and
+  P{\i}nar Yolum.
+\newblock Heuristics for using cp-nets in utility-based negotiation without
+  knowing utilities.
+\newblock {\em Knowledge and Information Systems}, 45(2):357--388, November
+  2015.
+
+\bibitem{BaarslagComponentAnalysis}
+Tim Baarslag, Alexander~S.Y. Dirkzwager, Koen~V. Hindriks, and Catholijn~M.
+  Jonker.
+\newblock The significance of bidding, accepting and opponent modeling in
+  automated negotiation.
+\newblock In {\em 21st European Conference on Artificial Intelligence}, volume
+  263 of {\em Frontiers in Artificial Intelligence and Applications}, pages
+  27--32. IOS Press, 2014.
+
+\bibitem{Baarslag12AI}
+Tim Baarslag, Mark~J.C. Hendrikx, Koen~V. Hindriks, and Catholijn~M. Jonker.
+\newblock Measuring the performance of online opponent models in automated
+  bilateral negotiation.
+\newblock In Michael Thielscher and Dongmo Zhang, editors, {\em AI 2012:
+  Advances in Artificial Intelligence}, volume 7691 of {\em Lecture Notes in
+  Computer Science}, pages 1--14. Springer Berlin Heidelberg, 2012.
+
+\bibitem{Baarslag13AIT}
+Tim Baarslag, Mark~J.C. Hendrikx, Koen~V. Hindriks, and Catholijn~M. Jonker.
+\newblock Predicting the performance of opponent models in automated
+  negotiation.
+\newblock In {\em Proceedings of the 2013 IEEE/WIC/ACM International Joint
+  Conferences on Web Intelligence (WI) and Intelligent Agent Technologies
+  (IAT)}, volume~2 of {\em WI-IAT '13}, pages 59--66, Washington, DC, USA, Nov
+  2013. IEEE Computer Society.
+
+\bibitem{Baarslag13AAMAS}
+Tim Baarslag and Koen~V. Hindriks.
+\newblock Accepting optimally in automated negotiation with incomplete
+  information.
+\newblock In {\em Proceedings of the 2013 International Conference on
+  Autonomous Agents and Multi-agent Systems}, AAMAS '13, pages 715--722,
+  Richland, SC, 2013. International Foundation for Autonomous Agents and
+  Multiagent Systems.
+
+\bibitem{BaarslagBOA}
+Tim Baarslag, Koen~V. Hindriks, Mark~J.C. Hendrikx, Alex~S.Y. Dirkzwager, and
+  Catholijn~M. Jonker.
+\newblock Decoupling negotiating agents to explore the space of negotiation
+  strategies.
+\newblock In Ivan Marsa-Maestre, Miguel~A. Lopez-Carmona, Takayuki Ito, Minjie
+  Zhang, Quan Bai, and Katsuhide Fujita, editors, {\em Novel Insights in
+  Agent-based Complex Automated Negotiation}, volume 535 of {\em Studies in
+  Computational Intelligence}, pages 61--83. Springer, Japan, 2014.
+
+\bibitem{Baarslag13DSS}
+Tim Baarslag, Koen~V. Hindriks, and Catholijn~M. Jonker.
+\newblock Effective acceptance conditions in real-time automated negotiation.
+\newblock {\em Decision Support Systems}, 60:68--77, Apr 2014.
+
+\bibitem{BaarslagValueOfInformation}
+Tim Baarslag and Michael Kaisers.
+\newblock The value of information in automated negotiation: A decision model
+  for eliciting user preferences.
+\newblock In {\em Proceedings of the 16th Conference on Autonomous Agents and
+  MultiAgent Systems}, AAMAS '17, pages 391--400, Richland, SC, 2017.
+  International Foundation for Autonomous Agents and Multiagent Systems.
+
+\bibitem{UTAGMS}
+Salvatore Greco, Vincent Mousseau, and Roman Slowinski.
+\newblock Ordinal regression revisited: Multiple criteria ranking using a set
+  of additive value functions.
+\newblock {\em European Journal of Operational Research}, 191(2):416 -- 436,
+  2008.
+
+\bibitem{ANAC2010KawExt}
+Shogo Kawaguchi, Katsuhide Fujita, and Takayuki Ito.
+\newblock Compromising strategy based on estimated maximum utility for
+  automated negotiating agents.
+\newblock In Takayuki Ito, Minjie Zhang, Valentin Robu, Shaheen Fatima, and
+  Tokuro Matsuo, editors, {\em New Trends in Agent-based Complex Automated
+  Negotiations, Series of Studies in Computational Intelligence}, pages
+  137--144, Berlin, Heidelberg, 2012. Springer-Verlag.
+
+\bibitem{Genius}
+Raz Lin, Sarit Kraus, Tim Baarslag, Dmytro Tykhonov, Koen~V. Hindriks, and
+  Catholijn~M. Jonker.
+\newblock Genius: An integrated environment for supporting the design of
+  generic automated negotiators.
+\newblock {\em Computational Intelligence}, 2012.
+
+\bibitem{Ros16}
+Ewa Roszkowska.
+\newblock The application of uta method for support evaluation negotiation
+  offers.
+\newblock 2016.
+
+\bibitem{Sri73}
+Venkat Srinivasan and Allan~D Shocker.
+\newblock Estimating the weights for multiple attributes in a composite
+  criterion using pairwise judgments.
+\newblock {\em Psychometrika}, 38(4):473--493, 1973.
+
+\bibitem{Tsi18}
+Dimitrios Tsimpoukis, Tim Baarslag, Michael Kaisers, and Nikolaos Paterakis.
+\newblock Automated negotiations under user preference uncertainty: A linear
+  programming approach.
+\newblock In {\em Proceedings of Agreement Technologies}, January 2018.
+
+\bibitem{Zin18}
+Luisa~M Zintgraf, Diederik~M Roijers, Sjoerd Linders, Catholijn~M Jonker, and
+  Ann Now{\'e}.
+\newblock Ordered preference elicitation strategies for supporting
+  multi-objective decision making.
+\newblock {\em arXiv preprint arXiv:1802.07606}, 2018.
+
+\end{thebibliography}

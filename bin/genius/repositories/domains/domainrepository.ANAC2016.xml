@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<repository fileName="domainrepository.xml">
+	<items>
+		<agentRepItems />
+		<partyRepItems />
+		<domainRepItem>
+			
+			<domainRepItem
+				url="file:etc/templates/ANAC2016/AgentHp2/energy_grid_domain.xml">
+				<profile url="file:etc/templates/ANAC2016/AgentHp2/consumer.xml" />
+				<profile url="file:etc/templates/ANAC2016/AgentHp2/producer.xml" />
+				<profile url="file:etc/templates/ANAC2016/AgentHp2/provider.xml"/>
+			</domainRepItem>
+			
+		     <domainRepItem
+				url="file:etc/templates/ANAC2016/AgentLightSmartGrid/SmartEnergyGrid.xml">
+				<profile url="file:etc/templates/ANAC2016/AgentLightSmartGrid/SmartEnergyGrid_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/AgentLightSmartGrid/SmartEnergyGrid_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/AgentLightSmartGrid/SmartEnergyGrid_util3.xml"/>
+			</domainRepItem>
+						
+		     <domainRepItem
+				url="file:etc/templates/ANAC2016/AgentSmith/DomainAce.xml">
+				<profile url="file:etc/templates/ANAC2016/AgentSmith/DomainAce_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/AgentSmith/DomainAce_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/AgentSmith/DomainAce_util3.xml"/>
+			</domainRepItem>
+			
+			<domainRepItem
+				url="file:etc/templates/ANAC2016/Atlas3/triangularFight.xml">
+				<profile url="file:etc/templates/ANAC2016/Atlas3/triangularFight_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/Atlas3/triangularFight_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/Atlas3/triangularFight_util3.xml"/>
+			</domainRepItem>
+
+ 			 <domainRepItem
+				url="file:etc/templates/ANAC2016/Caduceus/Smart_Grid.xml">
+				<profile url="file:etc/templates/ANAC2016/Caduceus/Smart_Grid_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/Caduceus/Smart_Grid_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/Caduceus/Smart_Grid_util3.xml"/>
+			</domainRepItem>
+			
+ 			 <domainRepItem
+				url="file:etc/templates/ANAC2016/ClockWork/SmartGridDomain.xml">
+				<profile url="file:etc/templates/ANAC2016/ClockWork/SmartGridDomain_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/ClockWork/SmartGridDomain_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/ClockWork/SmartGridDomain_util3.xml"/>
+			</domainRepItem>
+			
+ 			 <domainRepItem
+				url="file:etc/templates/ANAC2016/Farma/DomainTwF.xml">
+				<profile url="file:etc/templates/ANAC2016/Farma/DomainTwF_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/Farma/DomainTwF_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/Farma/DomainTwF_util3.xml"/>
+			</domainRepItem>			
+			
+ 			 <domainRepItem
+				url="file:etc/templates/ANAC2016/GrandMa/Smart_Energy_Grid.xml">
+				<profile url="file:etc/templates/ANAC2016/GrandMa/Smart_Energy_Grid_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/GrandMa/Smart_Energy_Grid_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/GrandMa/Smart_Energy_Grid_util3.xml"/>
+			</domainRepItem>
+			
+			 <domainRepItem
+				url="file:etc/templates/ANAC2016/Maxoops/WindFarm.xml">
+				<profile url="file:etc/templates/ANAC2016/Maxoops/WindFarm_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/Maxoops/WindFarm_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/Maxoops/WindFarm_util3.xml"/>
+			</domainRepItem>
+				
+		     <domainRepItem
+				url="file:etc/templates/ANAC2016/myAgent/KDomain.xml">
+				<profile url="file:etc/templates/ANAC2016/myAgent/KDomain_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/myAgent/KDomain_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/myAgent/KDomain_util3.xml"/>
+			</domainRepItem>
+		
+		    <domainRepItem
+				url="file:etc/templates/ANAC2016/nGent/ElectricVehicle.xml">
+				<profile url="file:etc/templates/ANAC2016/nGent/ElectricVehicle_profile1.xml" />
+				<profile url="file:etc/templates/ANAC2016/nGent/ElectricVehicle_profile2.xml" />
+				<profile url="file:etc/templates/ANAC2016/nGent/ElectricVehicle_profile3.xml"/>
+			</domainRepItem>
+		
+		    <domainRepItem
+				url="file:etc/templates/ANAC2016/parsAgent2/PEnergy.xml">
+				<profile url="file:etc/templates/ANAC2016/parsAgent2/PEnergy_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/parsAgent2/PEnergy_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/parsAgent2/PEnergy_util3.xml"/>
+			</domainRepItem>
+		
+			<domainRepItem
+				url="file:etc/templates/ANAC2016/parsCat/domain.xml">
+				<profile url="file:etc/templates/ANAC2016/parsCat/profile1.xml" />
+				<profile url="file:etc/templates/ANAC2016/parsCat/profile2.xml" />
+				<profile url="file:etc/templates/ANAC2016/parsCat/profile3.xml"/>
+			</domainRepItem>
+				
+			  <domainRepItem
+				url="file:etc/templates/ANAC2016/SYAgent/JapanTrip.xml">
+				<profile url="file:etc/templates/ANAC2016/SYAgent/JapanTrip_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/SYAgent/JapanTrip_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/SYAgent/JapanTrip_util3.xml"/>
+			 </domainRepItem>
+			
+			  <domainRepItem
+				url="file:etc/templates/ANAC2016/Terra/NewDomain.xml">
+				<profile url="file:etc/templates/ANAC2016/Terra/NewDomain_util1.xml" />
+				<profile url="file:etc/templates/ANAC2016/Terra/NewDomain_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/Terra/NewDomain_util3.xml"/>
+			 </domainRepItem>
+			 
+			 <domainRepItem
+				url="file:etc/templates/ANAC2016/YXagent/Smart_Energy_Grid.xml">
+				<profile url="file:etc/templates/ANAC2016/YXagent/Smart_Energy_Grid_util2.xml" />
+				<profile url="file:etc/templates/ANAC2016/YXagent/Smart_Energy_Grid_util3.xml" />
+				<profile url="file:etc/templates/ANAC2016/YXagent/Smart_Energy_Grid_util4.xml"/>
+			 </domainRepItem>
+			
+			
+		</domainRepItem>
+		<protocolRepItem />
+		<multiPartyProtocolRepItem />
+	</items>
+	<filename>domainrepository.xml</filename>
+</repository>
