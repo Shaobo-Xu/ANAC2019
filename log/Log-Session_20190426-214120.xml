@@ -1,0 +1,7 @@
+<?xml version="1.0" ?><Session>
+<NegotiationOutcome currentTime="Fri Apr 26 21:41:21 BST 2019" timeOfAgreement="0.9226519337016574" lastAction="(Accept  bid:Bid[a: a2, b: b1, c: c2, d: d2])" domain="etc/templates/Domain4/Domain4.xml" bids="332" runtime="0.318953244" finalOutcome="Bid[a: a2, b: b1, c: c2, d: d2]" startingAgent="AgentGG@2" deadline="180rounds">
+<resultsOfAgent agent="AgentGG@2" agentDesc="Well Played" utilspace="etc/templates/Domain4/Domain4_util1.xml" agentClass="GoodGame.AgentGG" finalUtility="0.3196248032535624" discountedUtility="0.3196248032535624" discount="1.0">
+</resultsOfAgent>
+<resultsOfAgent agent="AgentGG@3" agentDesc="Well Played" utilspace="etc/templates/Domain4/Domain4_util2.xml" agentClass="GoodGame.AgentGG" finalUtility="0.9223016595269995" discountedUtility="0.9223016595269995" discount="1.0">
+</resultsOfAgent>
+</NegotiationOutcome></Session>

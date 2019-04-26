@@ -1,0 +1,7 @@
+<?xml version="1.0" ?><Session>
+<NegotiationOutcome exception="Failed to execute protocol: Execution failed of test@0:java.lang.NullPointerException: null" currentTime="Fri Apr 26 21:51:41 BST 2019" lastAction="null" bids="0" runtime="0.006817849" deadline="180rounds">
+<resultsOfAgent agent="test" utilspace="etc/templates/Domain4/Domain4_util1.xml" agentClass="D:\GitHub\ANAC2019\bin\test\test.class" finalUtility="0.5" discountedUtility="0.5" discount="1.0">
+</resultsOfAgent>
+<resultsOfAgent agent="test" utilspace="etc/templates/Domain4/Domain4_util2.xml" agentClass="D:\GitHub\ANAC2019\bin\test\test.class" finalUtility="0.5" discountedUtility="0.5" discount="1.0">
+</resultsOfAgent>
+</NegotiationOutcome></Session>

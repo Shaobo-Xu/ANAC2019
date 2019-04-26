@@ -1,0 +1,7 @@
+<?xml version="1.0" ?><Session>
+<NegotiationOutcome currentTime="Fri Apr 26 20:41:06 BST 2019" timeOfAgreement="0.9977002299770023" lastAction="(Accept  bid:Bid[Segmentation: all to two(farmer &amp; cons. comp.), Water Canal: Medium, Park: None, Functionality: Farming])" domain="etc/templates/ANAC2015/group4-zoning_plan/Group4.xml" bids="19955" runtime="14.618328462" finalOutcome="Bid[Segmentation: all to two(farmer &amp; cons. comp.), Water Canal: Medium, Park: None, Functionality: Farming]" startingAgent="AgentGG@0" deadline="10000rounds">
+<resultsOfAgent agent="AgentGG@0" agentDesc="Well Played" utilspace="etc/templates/ANAC2015/group4-zoning_plan/Group4_util1.xml" agentClass="GoodGame.AgentGG" finalUtility="0.8210764561215952" discountedUtility="0.8210764561215952" discount="1.0">
+</resultsOfAgent>
+<resultsOfAgent agent="AgentGG@1" agentDesc="Well Played" utilspace="etc/templates/ANAC2015/group4-zoning_plan/Group4_util2.xml" agentClass="GoodGame.AgentGG" finalUtility="0.5160331217122087" discountedUtility="0.5160331217122087" discount="1.0">
+</resultsOfAgent>
+</NegotiationOutcome></Session>
