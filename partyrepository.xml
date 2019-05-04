@@ -390,6 +390,12 @@
             <partyRepItem classPath="D:\GitHub\ANAC2019\bin\test\test.class" strategyParameters="">
                 <properties/>
             </partyRepItem>
+            <partyRepItem classPath="F:\GitHub\ANAC2019\bin\test\test.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
+            <partyRepItem classPath="F:\GitHub\ANAC2019\bin\TestingReserve\TestingReserve.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
         </partyRepItems>
         <domainRepItem/>
         <protocolRepItem/>

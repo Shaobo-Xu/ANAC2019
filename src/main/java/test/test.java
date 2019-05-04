@@ -26,11 +26,10 @@ public class test extends AbstractNegotiationParty {
     //报价 or 接受 策略
     @Override
     public Action chooseAction(List<Class<? extends Action>> list) {
+        double aaa = utilitySpace.getReservationValue();
 
-        double b = estimateUtilitySpace().getDiscountFactor();
-        double a = utilitySpace.getReservationValue();
-        System.out.println(b);
-        System.out.println(a);
+        System.out.println(aaa);
+
 
         Bid mb = generateRandomBid();
         return new Offer(this.getPartyId(), mb);

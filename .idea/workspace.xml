@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a65e32da-1de9-43aa-8baf-bb610eac9228" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/test/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/templates/ANAC2015/group4-zoning_plan/Group4_util1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/templates/ANAC2015/group4-zoning_plan/Group4_util1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/templates/ANAC2015/group4-zoning_plan/Group4_util2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/templates/ANAC2015/group4-zoning_plan/Group4_util2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/templates/Domain4/Domain4_util1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/templates/Domain4/Domain4_util1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/GoodGame/AgentGG.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/test/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/test/test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/etc/templates/Domain4/Domain4_util2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/templates/Domain4/Domain4_util2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/templates/Domain4/Domain4_util4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/templates/Domain4/Domain4_util4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/templates/partydomain/party1_utility.xml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/templates/partydomain/party1_utility.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etc/templates/partydomain/party2_utility.xml" beforeDir="false" afterPath="$PROJECT_DIR$/etc/templates/partydomain/party2_utility.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/partyrepository.xml" beforeDir="false" afterPath="$PROJECT_DIR$/partyrepository.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GoodGame/AgentGG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GoodGame/AgentGG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,71 +21,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="111010597">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="302" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="302" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/test/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="29" column="39" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#9067#9068#0" expanded="true" />
-                <element signature="e#9103#9104#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/GoodGame/AgentGG.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="175" column="13" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="13" />
+            <state>
               <folding>
-                <element signature="e#9125#9126#0" expanded="true" />
-                <element signature="e#9161#9162#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/genius/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -102,6 +46,13 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>RESERVATION</find>
+      <find>reservation</find>
+      <find>rece</find>
+      <find>ReceiveMessage</find>
+      <find>accept</find>
+      <find>receiveMessage</find>
+      <find>utilitySpaces</find>
+      <find>flatteningStrategy</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,8 +62,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GoodGame/AgentGG.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TestingAgent/TestingAgent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TestingReserve/TestingReserve.java" />
         <option value="$PROJECT_DIR$/src/main/java/test/test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/genius/core/representative/UncertainUtilitySpace.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GoodGame/AgentGG.java" />
       </list>
     </option>
   </component>
@@ -122,11 +76,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1541" />
-    <option name="y" value="463" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="39" />
+    <option name="y" value="-13" />
+    <option name="width" value="1546" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -163,12 +117,15 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,36 +157,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="genius" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ANAC2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ANAC2019" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="GoodGame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ANAC2019" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ANAC2019" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556313352312" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556991504191" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -252,7 +192,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TestingReserve">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="genius.Application" />
       <module name="NegotiatorGUI" />
@@ -266,8 +206,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestingReserve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestingReserve.TestingReserve" />
+      <module name="NegotiatorGUI" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestingReserve.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestingReserve" />
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
@@ -290,24 +244,25 @@
     <option name="totallyTimeSpent" value="6011000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1541" y="463" width="1400" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.33283582" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.30802602" visible="true" weight="0.17803837" />
+      <window_info id="Structure" order="6" sideWeight="0.691974" side_tool="true" weight="0.17803837" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.33140877" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.3308026" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3294036" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.3286334" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
@@ -320,13 +275,11 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/genius/core/parties/NegotiationPartyInternal.java">
@@ -364,28 +317,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/genius/core/parties/AbstractNegotiationParty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="106" column="5" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding>
+            <element signature="e#3406#3407#0" expanded="true" />
+            <element signature="e#3472#3473#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genius/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
+        <state relative-caret-position="216">
           <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GoodGame/AgentGG.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/agents/bayesianopponentmodel/BayesianOpponentModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="175" column="13" selection-start-line="175" selection-start-column="13" selection-end-line="175" selection-end-column="13" />
-          <folding>
-            <element signature="e#9125#9126#0" expanded="true" />
-            <element signature="e#9161#9162#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="297">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/agents/bayesianopponentmodel/UtilitySpaceHypothesis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/agents/anac/y2017/agentf/AgentF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-972">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/genius/core/utility/AbstractUtilitySpace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        <state relative-caret-position="-5299">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
             <element signature="e#1246#1247#0" expanded="true" />
             <element signature="e#1278#1279#0" expanded="true" />
@@ -397,25 +381,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/genius/core/parties/AbstractNegotiationParty.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genius/core/Agent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-897">
-          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+        <state relative-caret-position="367">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
           <folding>
-            <element signature="e#3406#3407#0" expanded="true" />
-            <element signature="e#3472#3473#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2614#2615#0" expanded="true" />
+            <element signature="e#2671#2672#0" expanded="true" />
+            <element signature="e#2746#2747#0" expanded="true" />
+            <element signature="e#2769#2770#0" expanded="true" />
+            <element signature="e#4151#4152#0" expanded="true" />
+            <element signature="e#4164#4165#0" expanded="true" />
+            <element signature="e#4429#4430#0" expanded="true" />
+            <element signature="e#4448#4449#0" expanded="true" />
+            <element signature="e#4635#4636#0" expanded="true" />
+            <element signature="e#4664#4665#0" expanded="true" />
+            <element signature="e#5297#5298#0" expanded="true" />
+            <element signature="e#5361#5362#0" expanded="true" />
+            <element signature="e#6282#6283#0" expanded="true" />
+            <element signature="e#6314#6315#0" expanded="true" />
+            <element signature="e#7712#7713#0" expanded="true" />
+            <element signature="e#7739#7740#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/test/test.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/genius/core/representative/UncertainUtilitySpace.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="29" column="39" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="39" />
+        <state relative-caret-position="243">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="34" />
+          <folding>
+            <element signature="e#5039#5040#0" expanded="true" />
+            <element signature="e#5084#5085#0" expanded="true" />
+            <element signature="e#5359#5360#0" expanded="true" />
+            <element signature="e#5386#5387#0" expanded="true" />
+            <element signature="e#5681#5682#0" expanded="true" />
+            <element signature="e#5713#5714#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TestingReserve/TestingReserve.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+          <folding>
+            <element signature="e#1800#1801#0" expanded="true" />
+            <element signature="e#1829#1830#0" expanded="true" />
+            <element signature="e#1871#1872#0" expanded="true" />
+            <element signature="e#1890#1891#0" expanded="true" />
+            <element signature="e#1944#1945#0" expanded="true" />
+            <element signature="e#1983#1984#0" expanded="true" />
+            <element signature="method#chooseAction#0;class#TestingReserve#0" />
+            <element signature="method#chooseRandomBidAction#0;class#TestingReserve#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GoodGame/AgentGG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9067#9068#0" expanded="true" />
-            <element signature="e#9103#9104#0" expanded="true" />
           </folding>
         </state>
       </provider>

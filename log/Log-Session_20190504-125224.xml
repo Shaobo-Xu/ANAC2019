@@ -1,0 +1,7 @@
+<?xml version="1.0" ?><Session>
+<NegotiationOutcome currentTime="Sat May 04 12:52:24 BST 2019" lastAction="(EndNegotiation)" domain="etc/templates/partydomain/party_domain.xml" bids="36" runtime="0.0582358" finalOutcome="-" startingAgent="TestingReserve@4" deadline="180rounds">
+<resultsOfAgent agent="TestingReserve@4" agentDesc="Agent TestingReserve" utilspace="etc/templates/partydomain/party1_utility.xml" agentClass="TestingReserve.TestingReserve" finalUtility="0.0" discountedUtility="0.0" discount="1.0">
+</resultsOfAgent>
+<resultsOfAgent agent="TestingReserve@5" agentDesc="Agent TestingReserve" utilspace="etc/templates/partydomain/party2_utility.xml" agentClass="TestingReserve.TestingReserve" finalUtility="0.0" discountedUtility="0.0" discount="1.0">
+</resultsOfAgent>
+</NegotiationOutcome></Session>

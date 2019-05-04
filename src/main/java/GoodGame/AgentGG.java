@@ -159,24 +159,21 @@ public class AgentGG extends AbstractNegotiationParty {
                             System.out.println("compromise1");
                             return new Accept(getPartyId(), receivedOfferBid);
                         }
+                    } else if (time < 1.0 - 3 * 0.6 / this.numberOfOffers) {
+                        // 在最后50轮内收集对手给的最好的报价并接受
+                        if (impMap.getImportance(receivedOfferBid) > 0.95 * this.lastBidValue) {
+                            System.out.println("compromise2");
+                            return new Accept(getPartyId(), receivedOfferBid);
+                        }
+                    } else {
+                        // 如果没有，则妥协
+                        System.out.println("compromise0");
+                        return new Accept(getPartyId(), receivedOfferBid);
                     }
-//                    } else if (time < 1.0 - 3 * 0.6 / this.numberOfOffers) {
-////                        // 在最后50轮内收集对手给的最好的报价并接受
-////                        if (impMap.getImportance(receivedOfferBid) > 0.95 * this.lastBidValue) {
-////                            System.out.println("compromise2");
-////                            return new Accept(getPartyId(), receivedOfferBid);
-//                        }
-//                    } else {
-////                        // 如果没有，则妥协
-////                        System.out.println("compromise0");
-////                        return new Accept(getPartyId(), receivedOfferBid);
-//                    }
                     this.opponentRatio = 0.38 + 0.41 * (0.3 / 2. * (time - 0.3) * (time - 0.3) + (time - 0.3)) - 1.0 / this.numberOfIssues;
                 }
             }
             double offerUpperRatio = this.offerLowerRatio + 0.08;
-
-
 
             Bid bid = getNeededRandomBid(this.offerLowerRatio, offerUpperRatio, this.opponentRatio);
             return new Offer(getPartyId(), bid);

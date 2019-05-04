@@ -1,62 +1,54 @@
 <utility_space type="UNCERTAIN"> 
 <objective name="Domain4" index="0" description="" etype="objective" type="objective"> 
 <issue vtype="discrete" name="a" index="1" etype="discrete" type="discrete"> 
-<item evaluation="1.0" index="1" value="a1"> 
+<item index="1" value="a1"> 
 </item> 
-<item evaluation="5.0" index="2" value="a2"> 
+<item index="2" value="a2"> 
 </item> 
-<item evaluation="1.0" index="3" value="a3"> 
+<item index="3" value="a3"> 
 </item> 
-<item evaluation="1.0" index="4" value="a4"> 
+<item index="4" value="a4"> 
 </item> 
-<item evaluation="1.0" index="5" value="a5"> 
+<item index="5" value="a5"> 
 </item> 
 </issue> 
 <issue vtype="discrete" name="b" index="2" etype="discrete" type="discrete"> 
-<item evaluation="1.0" index="1" value="b1"> 
+<item index="1" value="b1"> 
 </item> 
-<item evaluation="2.0" index="2" value="b2"> 
+<item index="2" value="b2"> 
 </item> 
-<item evaluation="5.0" index="3" value="b3"> 
+<item index="3" value="b3"> 
 </item> 
-<item evaluation="2.0" index="4" value="b4"> 
+<item index="4" value="b4"> 
 </item> 
 </issue> 
 <issue vtype="discrete" name="c" index="3" etype="discrete" type="discrete"> 
-<item evaluation="1.0" index="1" value="c1"> 
+<item index="1" value="c1"> 
 </item> 
-<item evaluation="5.0" index="2" value="c2"> 
+<item index="2" value="c2"> 
 </item> 
-<item evaluation="1.0" index="3" value="c3"> 
+<item index="3" value="c3"> 
 </item> 
-<item evaluation="1.0" index="4" value="c4"> 
+<item index="4" value="c4"> 
 </item> 
 </issue> 
 <issue vtype="discrete" name="d" index="4" etype="discrete" type="discrete"> 
-<item evaluation="2.0" index="1" value="d1"> 
+<item index="1" value="d1"> 
 </item> 
-<item evaluation="4.0" index="2" value="d2"> 
+<item index="2" value="d2"> 
 </item> 
-<item evaluation="1.0" index="3" value="d3"> 
+<item index="3" value="d3"> 
 </item> 
-<item evaluation="2.0" index="4" value="d4"> 
+<item index="4" value="d4"> 
 </item> 
 </issue> 
-<weight index="1" value="0.3855385954511951"> 
-</weight> 
-<weight index="2" value="0.09712292559125056"> 
-</weight> 
-<weight index="3" value="0.418314931594238"> 
-</weight> 
-<weight index="4" value="0.09902354736331632"> 
-</weight> 
 </objective> 
 <discount_factor value="1.0"> 
 </discount_factor> 
 <reservation value="0.5"> 
 </reservation> 
 <comparisons> 
-211 
+170 
 </comparisons> 
 <errors> 
 0 
