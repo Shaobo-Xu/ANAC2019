@@ -1,0 +1,10 @@
+.idea/
+.settings/
+.svn/
+
+bin/
+log/
+
+NegotiatorGUI.iml
+
+~$?*.*
