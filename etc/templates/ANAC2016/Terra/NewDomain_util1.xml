@@ -1,113 +1,109 @@
-<utility_space>
-<objective index="0" description="" name="NewDomain" type="objective" etype="objective">
-
-<issue index="1" name="a" vtype="discrete" type="discrete" etype="discrete">
-<item index="1" value="a1" evaluation="5">
-</item>
-<item index="2" value="a2" evaluation="1">
-</item>
-<item index="3" value="a3" evaluation="1">
-</item>
-<item index="4" value="a4" evaluation="1">
-</item>
-<item index="5" value="a5" evaluation="1">
-</item>
-</issue>
-
-<issue index="2" name="b" vtype="discrete" type="discrete" etype="discrete">
-<item index="1" value="b1" evaluation="3">
-</item>
-<item index="2" value="b2" evaluation="4">
-</item>
-<item index="3" value="b3" evaluation="2">
-</item>
-<item index="4" value="b4" evaluation="1">
-</item>
-</issue>
-
-<issue index="3" name="c" vtype="discrete" type="discrete" etype="discrete">
-<item index="1" value="c1" evaluation="5">
-</item>
-<item index="2" value="c2" evaluation="1">
-</item>
-<item index="3" value="c3" evaluation="3">
-</item>
-<item index="4" value="c4" evaluation="1">
-</item>
-</issue>
-
-<issue index="4" name="d" vtype="discrete" type="discrete" etype="discrete">
-<item index="1" value="d1" evaluation="3">
-</item>
-<item index="2" value="d2" evaluation="4">
-</item>
-<item index="3" value="d3" evaluation="2">
-</item>
-<item index="4" value="d4" evaluation="4">
-</item>
-</issue>
-
-<issue index="5" name="e" vtype="discrete" type="discrete" etype="discrete">
-<item index="1" value="e1" evaluation="1">
-</item>
-<item index="2" value="e2" evaluation="4">
-</item>
-<item index="3" value="e3" evaluation="5">
-</item>
-<item index="4" value="e4" evaluation="4">
-</item>
-</issue>
-
-<issue index="6" name="f" vtype="discrete" type="discrete" etype="discrete">
-<item index="1" value="f1" evaluation="3">
-</item>
-<item index="2" value="f2" evaluation="1">
-</item>
-<item index="3" value="f3" evaluation="2">
-</item>
-<item index="4" value="f4" evaluation="1">
-</item>
-<item index="5" value="f5" evaluation="2">
-</item>
-<item index="6" value="f6" evaluation="7">
-</item>
-<item index="7" value="f7" evaluation="2">
-</item>
-</issue>
-
-<issue index="7" name="g" vtype="discrete" type="discrete" etype="discrete">
-<item index="1" value="g1" evaluation="3">
-</item>
-<item index="2" value="g2" evaluation="1">
-</item>
-<item index="3" value="g3" evaluation="2">
-</item>
-<item index="4" value="g4" evaluation="4">
-</item>
-</issue>
-
-
-<weight index="1" value="0.1">
-</weight>
-<weight index="2" value="0.2">
-</weight>
-<weight index="3" value="0.2">
-</weight>
-<weight index="4" value="0.1">
-</weight>
-<weight index="5" value="0.1">
-</weight>
-<weight index="6" value="0.2">
-</weight>
-<weight index="7" value="0.1">
-</weight>
-
-</objective>
-
-<discount_factor value="0.3">
-</discount_factor>
-
-<reservation value="0.4">
-</reservation>
-
-</utility_space>
+<utility_space type="UNCERTAIN"> 
+<objective name="NewDomain" index="0" description="" etype="objective" type="objective"> 
+<issue vtype="discrete" name="a" index="1" etype="discrete" type="discrete"> 
+<item evaluation="5.0" index="1" value="a1"> 
+</item> 
+<item evaluation="1.0" index="2" value="a2"> 
+</item> 
+<item evaluation="1.0" index="3" value="a3"> 
+</item> 
+<item evaluation="1.0" index="4" value="a4"> 
+</item> 
+<item evaluation="1.0" index="5" value="a5"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="b" index="2" etype="discrete" type="discrete"> 
+<item evaluation="3.0" index="1" value="b1"> 
+</item> 
+<item evaluation="4.0" index="2" value="b2"> 
+</item> 
+<item evaluation="2.0" index="3" value="b3"> 
+</item> 
+<item evaluation="1.0" index="4" value="b4"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="c" index="3" etype="discrete" type="discrete"> 
+<item evaluation="5.0" index="1" value="c1"> 
+</item> 
+<item evaluation="1.0" index="2" value="c2"> 
+</item> 
+<item evaluation="3.0" index="3" value="c3"> 
+</item> 
+<item evaluation="1.0" index="4" value="c4"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="d" index="4" etype="discrete" type="discrete"> 
+<item evaluation="3.0" index="1" value="d1"> 
+</item> 
+<item evaluation="4.0" index="2" value="d2"> 
+</item> 
+<item evaluation="2.0" index="3" value="d3"> 
+</item> 
+<item evaluation="4.0" index="4" value="d4"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="e" index="5" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="e1"> 
+</item> 
+<item evaluation="4.0" index="2" value="e2"> 
+</item> 
+<item evaluation="5.0" index="3" value="e3"> 
+</item> 
+<item evaluation="4.0" index="4" value="e4"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="f" index="6" etype="discrete" type="discrete"> 
+<item evaluation="3.0" index="1" value="f1"> 
+</item> 
+<item evaluation="1.0" index="2" value="f2"> 
+</item> 
+<item evaluation="2.0" index="3" value="f3"> 
+</item> 
+<item evaluation="1.0" index="4" value="f4"> 
+</item> 
+<item evaluation="2.0" index="5" value="f5"> 
+</item> 
+<item evaluation="7.0" index="6" value="f6"> 
+</item> 
+<item evaluation="2.0" index="7" value="f7"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="g" index="7" etype="discrete" type="discrete"> 
+<item evaluation="3.0" index="1" value="g1"> 
+</item> 
+<item evaluation="1.0" index="2" value="g2"> 
+</item> 
+<item evaluation="2.0" index="3" value="g3"> 
+</item> 
+<item evaluation="4.0" index="4" value="g4"> 
+</item> 
+</issue> 
+<weight index="1" value="0.09918645521382508"> 
+</weight> 
+<weight index="2" value="0.2002941556867854"> 
+</weight> 
+<weight index="3" value="0.20022010291267708"> 
+</weight> 
+<weight index="4" value="0.10010003525150508"> 
+</weight> 
+<weight index="5" value="0.10007955343809714"> 
+</weight> 
+<weight index="6" value="0.20009737691578516"> 
+</weight> 
+<weight index="7" value="0.10002232058132515"> 
+</weight> 
+</objective> 
+<discount_factor value="1.0"> 
+</discount_factor> 
+<reservation value="0.0"> 
+</reservation> 
+<comparisons> 
+27737 
+</comparisons> 
+<errors> 
+0 
+</errors> 
+<experimental> 
+true 
+</experimental> 
+</utility_space> 

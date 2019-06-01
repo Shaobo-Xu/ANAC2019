@@ -42,29 +42,26 @@
 <item evaluation="4.0" index="4" value="d4"> 
 </item> 
 </issue> 
-<weight index="1" value="0.41057770799363213"> 
+<weight index="1" value="0.41056727535885756"> 
 </weight> 
-<weight index="2" value="0.08510564611059708"> 
+<weight index="2" value="0.08510845803825565"> 
 </weight> 
-<weight index="3" value="0.4132957735298532"> 
+<weight index="3" value="0.41330286401836824"> 
 </weight> 
-<weight index="4" value="0.09102087236591756"> 
+<weight index="4" value="0.09102140258451862"> 
 </weight> 
 </objective> 
 <discount_factor value="1.0"> 
 </discount_factor> 
-<reservation value="0.5"> 
+<reservation value="0.0"> 
 </reservation> 
 <comparisons> 
-217 
+250
 </comparisons> 
 <errors> 
 0 
 </errors> 
-<fixed_seed> 
-true 
-</fixed_seed> 
 <experimental> 
-false 
+true 
 </experimental> 
 </utility_space> 
