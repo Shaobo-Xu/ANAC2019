@@ -108,7 +108,7 @@ public class PreferenceExperiments {
 		domain.getIssues();
 		AdditiveUtilitySpaceFactory factory = new AdditiveUtilitySpaceFactory(domain);
 		utilityFactory = factory;
-		BidRanking bidRanking = new BidRanking(bids); //userModel.getBidRanking();
+		BidRanking bidRanking = new BidRanking(bids,0,1); //userModel.getBidRanking();
 		try {
 			estimateUsingBidRanks(bidRanking, domain, factory);
 			//estimateUsingBidRanksOld(bidRanking, domain, factory);

@@ -396,6 +396,12 @@
             <partyRepItem classPath="F:\GitHub\ANAC2019\bin\TestingReserve\TestingReserve.class" strategyParameters="">
                 <properties/>
             </partyRepItem>
+            <partyRepItem classPath="D:\ANAC2019\bin\group1\Agent1.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
+            <partyRepItem classPath="D:\ANAC2019\bin\GoodGame\AgentGG.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
         </partyRepItems>
         <domainRepItem/>
         <protocolRepItem/>

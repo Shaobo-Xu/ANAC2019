@@ -81,7 +81,7 @@ public class FBEstimator {
 	
 	// AHHHH
 	private void normUtils() {
-		utilityFactory.normalizeWeightsByMaxValues();
+		utilityFactory.normalizeWeightsByMaxValues2();
 	}
 	
 	//This changes the confidence level that the lower item is better than the higher Item

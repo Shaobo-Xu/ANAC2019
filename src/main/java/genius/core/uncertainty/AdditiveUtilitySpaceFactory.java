@@ -108,6 +108,16 @@ public class AdditiveUtilitySpaceFactory
 		scaleAllValuesFrom0To1();
 		u.normalizeWeights();
 	}
+	public void normalizeWeightsByMaxValues2()
+	{
+		for (Issue i : getIssues())
+		{
+			EvaluatorDiscrete evaluator = (EvaluatorDiscrete) u.getEvaluator(i);
+			evaluator.normalizeAll();
+		}
+		scaleAllValuesFrom0To1();
+		u.normalizeWeights();
+	}
 	
 	public void scaleAllValuesFrom0To1()
 	{
