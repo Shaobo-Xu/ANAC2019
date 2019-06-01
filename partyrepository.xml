@@ -3,6 +3,12 @@
     <items>
         <agentRepItems/>
         <partyRepItems>
+            <partyRepItem classPath="GoodGame.AgentGG" strategyParameters="">
+                <properties/>
+            </partyRepItem>
+            <partyRepItem classPath="group1.Agent1" strategyParameters="">
+                <properties/>
+            </partyRepItem>
             <partyRepItem classPath="negotiator.parties.BoulwareNegotiationParty" strategyParameters="">
                 <properties/>
             </partyRepItem>
