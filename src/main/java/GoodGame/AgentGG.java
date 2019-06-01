@@ -88,25 +88,27 @@ public class AgentGG extends AbstractNegotiationParty {
 
             // 时间小于0.32时，保持高报价，并收集对手信息
             if (time < 0.32) {
-                // 一开始对方可能会一直报最高价，这个没什么用，会影响我们的map建立，因此直到对方发不重复的才开始记录
-                if (initialOpponentBid == null) {
-                    initialOpponentBid = receivedOfferBid;
-                    this.opponentImpMap.opponent_update(this.receivedOfferBid);
-                } else {
-                    if (receivedOfferBid != initialOpponentBid) {
-                        initialTimePass = true;
-                    }
-                }
-                if (initialTimePass) {
-                    this.opponentImpMap.opponent_update(this.receivedOfferBid);
-                }
+//                // 一开始对方可能会一直报最高价，这个没什么用，会影响我们的map建立，因此直到对方发不重复的才开始记录
+//                if (initialOpponentBid == null) {
+//                    initialOpponentBid = receivedOfferBid;
+//                    this.opponentImpMap.opponent_update(this.receivedOfferBid);
+//                } else {
+//                    if (receivedOfferBid != initialOpponentBid) {
+//                        initialTimePass = true;
+//                    }
+//                }
+//                if (initialTimePass) {
+//                    this.opponentImpMap.opponent_update(this.receivedOfferBid);
+//                }
+
+                this.opponentImpMap.opponent_update(this.receivedOfferBid);
 
                 // 前0.08时间内报最高价，为了适应一些特殊的domain
-                if (time < 0.08) {
-                    this.offerLowerRatio = 0.98;
+                if (time < 0.02) {
+                    this.offerLowerRatio = 1.0;
                 } else {
                     // 0.08~0.32时间内保持高报价
-                    this.offerLowerRatio = 0.98 - 1.2 * (time - 0.08) * (time - 0.08) - 17. / 375. * (time - 0.08);
+                    this.offerLowerRatio = 1.0 - 1.2 * (time - 0.08) * (time - 0.08) - 17. / 375. * (time - 0.08);
                 }
             } else {
                 // 在0.32时，运行一下计算
@@ -128,7 +130,7 @@ public class AgentGG extends AbstractNegotiationParty {
                         for (impUnit opponentUnit : opponentImpList) {
                             if (opponentUnit.meanWeightSum / opponentImpList.get(0).meanWeightSum > 0.8) {
                                 for (impUnit myUnit : myImpList) {
-                                    if (myUnit.meanWeightSum / myImpList.get(0).meanWeightSum > 0.8) {
+                                    if (myUnit.meanWeightSum / myImpList.get(0).meanWeightSum > 0.85) {
                                         if (myUnit.valueOfIssue.toString().equals(opponentUnit.valueOfIssue.toString())) {
                                             value = opponentUnit.valueOfIssue;
                                             value_got = true;
@@ -161,20 +163,20 @@ public class AgentGG extends AbstractNegotiationParty {
                     if (time < 0.92) {
                         this.numberOfOffers += 1;  // 统计一下bid在0.32~0.92的时间内的发放速度，
                         this.offerLowerRatio = 0.92 - 0.5 * (time - 0.32) * (time - 0.32) + (time - 0.32) * (10. / 6. * this.ratioBase - 37. / 30.);
-                    } else if (time < 1.0 - 53 * 0.6 / this.numberOfOffers) {
+                    } else if (time < 1.0 - 50 * 0.6 / this.numberOfOffers) {
                         // 记下0.92~0.99* 时间内的对方给的最佳bid
                         double currentValueOfOpponent = impMap.getImportance(receivedOfferBid);
                         if (currentValueOfOpponent > this.lastBidValue) {
                             this.lastBidValue = currentValueOfOpponent;
                         }
-                    } else if (time < 1.0 - 23 * 0.6 / this.numberOfOffers) {
-                        // 在最后50轮内收集对手给的最好的报价并接受
+                    } else if (time < 1.0 - 20 * 0.6 / this.numberOfOffers) {
+                        // 在倒数20~50轮内收集对手给的最好的报价并接受
                         if (impMap.getImportance(receivedOfferBid) > 1.0 * this.lastBidValue) {
                             System.out.println("compromise1");
                             return new Accept(getPartyId(), receivedOfferBid);
                         }
                     } else{
-                        // 在最后50轮内收集对手给的最好的报价并接受
+                        // 在倒数20轮内收集对手给的最好的报价并接受
                         if (impMap.getImportance(receivedOfferBid) > 0.95 * this.lastBidValue) {
                             System.out.println("compromise2");
                             return new Accept(getPartyId(), receivedOfferBid);
@@ -182,7 +184,7 @@ public class AgentGG extends AbstractNegotiationParty {
                     }
                 }
             }
-            double offerUpperRatio = this.offerLowerRatio + 0.08;
+            double offerUpperRatio = this.offerLowerRatio + 0.05;
 
             Bid bid = getNeededRandomBid(this.offerLowerRatio, offerUpperRatio);
             return new Offer(getPartyId(), bid);
@@ -290,10 +292,10 @@ public class AgentGG extends AbstractNegotiationParty {
             for (int i = 0; i < k; i++) {
                 Bid bid = generateRandomBid();
                 double bidImportance = this.impMap.getImportance(bid);
-                double bidOpponentImportacne = this.opponentImpMap.getImportance(bid);
+                double bidOpponentImportance = this.opponentImpMap.getImportance(bid);
                 if (bidImportance >= lowerThreshold && bidImportance <= upperThreshold) {
-                    if (bidOpponentImportacne > highest_opponent_importance) {
-                        highest_opponent_importance = bidOpponentImportacne;
+                    if (bidOpponentImportance > highest_opponent_importance) {
+                        highest_opponent_importance = bidOpponentImportance;
                         returnedBid = bid;
                     }
                 }
