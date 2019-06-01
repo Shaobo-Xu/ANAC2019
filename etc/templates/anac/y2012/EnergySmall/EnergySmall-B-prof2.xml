@@ -1,55 +1,101 @@
-<?xml version="1.0"?>
-<utility_space number_of_issues="6">
-  <objective index="0" etype="objective" type="objective" description="" name="Energy-small">
-    <weight index="1" value="0.045759405795226"/>
-    <weight index="2" value="0.25266422192864"/>
-    <weight index="3" value="0.27252719524102"/>
-    <weight index="4" value="0.21499819553896"/>
-    <weight index="5" value="0.15540726999895"/>
-    <weight index="6" value="0.058643711497201"/>
-    <issue index="1" name="0000-0400" type="discrete" etype="discrete">
-      <item index="1" value="0 kW" evaluation="0" cost="0"/>
-      <item index="2" value="25 kW" evaluation="14" cost="0"/>
-      <item index="3" value="50 kW" evaluation="277" cost="0"/>
-      <item index="4" value="75 kW" evaluation="883" cost="0"/>
-      <item index="5" value="100 kW" evaluation="1000" cost="0"/>
-    </issue>
-    <issue index="2" name="0400-0800" type="discrete" etype="discrete">
-      <item index="1" value="0 kW" evaluation="0" cost="0"/>
-      <item index="2" value="25 kW" evaluation="19" cost="0"/>
-      <item index="3" value="50 kW" evaluation="344" cost="0"/>
-      <item index="4" value="75 kW" evaluation="895" cost="0"/>
-      <item index="5" value="100 kW" evaluation="1000" cost="0"/>
-    </issue>
-    <issue index="3" name="0800-1200" type="discrete" etype="discrete">
-      <item index="1" value="0 kW" evaluation="0" cost="0"/>
-      <item index="2" value="25 kW" evaluation="243" cost="0"/>
-      <item index="3" value="50 kW" evaluation="413" cost="0"/>
-      <item index="4" value="75 kW" evaluation="713" cost="0"/>
-      <item index="5" value="100 kW" evaluation="1000" cost="0"/>
-    </issue>
-    <issue index="4" name="1200-1600" type="discrete" etype="discrete">
-      <item index="1" value="0 kW" evaluation="0" cost="0"/>
-      <item index="2" value="25 kW" evaluation="354" cost="0"/>
-      <item index="3" value="50 kW" evaluation="510" cost="0"/>
-      <item index="4" value="75 kW" evaluation="555" cost="0"/>
-      <item index="5" value="100 kW" evaluation="1000" cost="0"/>
-    </issue>
-    <issue index="5" name="1600-2000" type="discrete" etype="discrete">
-      <item index="1" value="0 kW" evaluation="0" cost="0"/>
-      <item index="2" value="25 kW" evaluation="22" cost="0"/>
-      <item index="3" value="50 kW" evaluation="107" cost="0"/>
-      <item index="4" value="75 kW" evaluation="749" cost="0"/>
-      <item index="5" value="100 kW" evaluation="1000" cost="0"/>
-    </issue>
-    <issue index="6" name="2000-0000" type="discrete" etype="discrete">
-      <item index="1" value="0 kW" evaluation="0" cost="0"/>
-      <item index="2" value="25 kW" evaluation="671" cost="0"/>
-      <item index="3" value="50 kW" evaluation="741" cost="0"/>
-      <item index="4" value="75 kW" evaluation="807" cost="0"/>
-      <item index="5" value="100 kW" evaluation="1000" cost="0"/>
-    </issue>
-  </objective>
-  <discount_factor value="1.00" />
-<reservation value="0.25" />
-</utility_space>
+<utility_space type="UNCERTAIN"> 
+<objective name="Energy-small" index="0" description="" etype="objective" type="objective"> 
+<issue vtype="discrete" name="0000-0400" index="1" etype="discrete" type="discrete"> 
+<item evaluation="0.0" index="1" value="0 kW"> 
+</item> 
+<item evaluation="14.0" index="2" value="25 kW"> 
+</item> 
+<item evaluation="277.0" index="3" value="50 kW"> 
+</item> 
+<item evaluation="883.0" index="4" value="75 kW"> 
+</item> 
+<item evaluation="1000.0" index="5" value="100 kW"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="0400-0800" index="2" etype="discrete" type="discrete"> 
+<item evaluation="0.0" index="1" value="0 kW"> 
+</item> 
+<item evaluation="19.0" index="2" value="25 kW"> 
+</item> 
+<item evaluation="344.0" index="3" value="50 kW"> 
+</item> 
+<item evaluation="895.0" index="4" value="75 kW"> 
+</item> 
+<item evaluation="1000.0" index="5" value="100 kW"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="0800-1200" index="3" etype="discrete" type="discrete"> 
+<item evaluation="0.0" index="1" value="0 kW"> 
+</item> 
+<item evaluation="243.0" index="2" value="25 kW"> 
+</item> 
+<item evaluation="413.0" index="3" value="50 kW"> 
+</item> 
+<item evaluation="713.0" index="4" value="75 kW"> 
+</item> 
+<item evaluation="1000.0" index="5" value="100 kW"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="1200-1600" index="4" etype="discrete" type="discrete"> 
+<item evaluation="0.0" index="1" value="0 kW"> 
+</item> 
+<item evaluation="354.0" index="2" value="25 kW"> 
+</item> 
+<item evaluation="510.0" index="3" value="50 kW"> 
+</item> 
+<item evaluation="555.0" index="4" value="75 kW"> 
+</item> 
+<item evaluation="1000.0" index="5" value="100 kW"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="1600-2000" index="5" etype="discrete" type="discrete"> 
+<item evaluation="0.0" index="1" value="0 kW"> 
+</item> 
+<item evaluation="22.0" index="2" value="25 kW"> 
+</item> 
+<item evaluation="107.0" index="3" value="50 kW"> 
+</item> 
+<item evaluation="749.0" index="4" value="75 kW"> 
+</item> 
+<item evaluation="1000.0" index="5" value="100 kW"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="2000-0000" index="6" etype="discrete" type="discrete"> 
+<item evaluation="0.0" index="1" value="0 kW"> 
+</item> 
+<item evaluation="671.0" index="2" value="25 kW"> 
+</item> 
+<item evaluation="741.0" index="3" value="50 kW"> 
+</item> 
+<item evaluation="807.0" index="4" value="75 kW"> 
+</item> 
+<item evaluation="1000.0" index="5" value="100 kW"> 
+</item> 
+</issue> 
+<weight index="1" value="0.04522023055810793"> 
+</weight> 
+<weight index="2" value="0.25361859154641025"> 
+</weight> 
+<weight index="3" value="0.27264565249282563"> 
+</weight> 
+<weight index="4" value="0.21534359167217515"> 
+</weight> 
+<weight index="5" value="0.1551465133148391"> 
+</weight> 
+<weight index="6" value="0.05802542041564192"> 
+</weight> 
+</objective> 
+<discount_factor value="1.0"> 
+</discount_factor> 
+<reservation value="0.0"> 
+</reservation> 
+<comparisons>
+    12070
+</comparisons> 
+<errors> 
+0 
+</errors> 
+<experimental> 
+true 
+</experimental> 
+</utility_space> 

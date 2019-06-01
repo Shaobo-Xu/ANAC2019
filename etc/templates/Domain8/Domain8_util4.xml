@@ -1,88 +1,97 @@
-<utility_space> 
-<objective index="0" description="" name="Domain8" type="objective" etype="objective"> 
-<issue index="1" name="a" vtype="discrete" type="discrete" etype="discrete"> 
-<item index="1" value="a1" evaluation="1"> 
+<utility_space type="UNCERTAIN"> 
+<objective name="Domain8" index="0" description="" etype="objective" type="objective"> 
+<issue vtype="discrete" name="a" index="1" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="a1"> 
 </item> 
-<item index="2" value="a2" evaluation="2"> 
+<item evaluation="2.0" index="2" value="a2"> 
 </item> 
-<item index="3" value="a3" evaluation="3"> 
-</item> 
-</issue> 
-<issue index="2" name="b" vtype="discrete" type="discrete" etype="discrete"> 
-<item index="1" value="b1" evaluation="1"> 
-</item> 
-<item index="2" value="b2" evaluation="2"> 
-</item> 
-<item index="3" value="b3" evaluation="3"> 
+<item evaluation="3.0" index="3" value="a3"> 
 </item> 
 </issue> 
-<issue index="3" name="c" vtype="discrete" type="discrete" etype="discrete"> 
-<item index="1" value="c1" evaluation="1"> 
+<issue vtype="discrete" name="b" index="2" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="b1"> 
 </item> 
-<item index="2" value="c2" evaluation="2"> 
+<item evaluation="2.0" index="2" value="b2"> 
 </item> 
-<item index="3" value="c3" evaluation="3"> 
-</item> 
-</issue> 
-<issue index="4" name="d" vtype="discrete" type="discrete" etype="discrete"> 
-<item index="1" value="d1" evaluation="1"> 
-</item> 
-<item index="2" value="d2" evaluation="2"> 
-</item> 
-<item index="3" value="d3" evaluation="3"> 
+<item evaluation="3.0" index="3" value="b3"> 
 </item> 
 </issue> 
-<issue index="5" name="e" vtype="discrete" type="discrete" etype="discrete"> 
-<item index="1" value="e1" evaluation="1"> 
+<issue vtype="discrete" name="c" index="3" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="c1"> 
 </item> 
-<item index="2" value="e2" evaluation="2"> 
+<item evaluation="2.0" index="2" value="c2"> 
 </item> 
-<item index="3" value="e3" evaluation="3"> 
-</item> 
-</issue> 
-<issue index="6" name="f" vtype="discrete" type="discrete" etype="discrete"> 
-<item index="1" value="f1" evaluation="1"> 
-</item> 
-<item index="2" value="f2" evaluation="2"> 
-</item> 
-<item index="3" value="f3" evaluation="3"> 
+<item evaluation="3.0" index="3" value="c3"> 
 </item> 
 </issue> 
-<issue index="7" name="g" vtype="discrete" type="discrete" etype="discrete"> 
-<item index="1" value="g1" evaluation="1"> 
+<issue vtype="discrete" name="d" index="4" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="d1"> 
 </item> 
-<item index="2" value="g2" evaluation="2"> 
+<item evaluation="2.0" index="2" value="d2"> 
 </item> 
-<item index="3" value="g3" evaluation="3"> 
-</item> 
-</issue> 
-<issue index="8" name="h" vtype="discrete" type="discrete" etype="discrete"> 
-<item index="1" value="h1" evaluation="1"> 
-</item> 
-<item index="2" value="h2" evaluation="2"> 
-</item> 
-<item index="3" value="h3" evaluation="3"> 
+<item evaluation="3.0" index="3" value="d3"> 
 </item> 
 </issue> 
-<weight index="1" value="0.1561273868992367"> 
+<issue vtype="discrete" name="e" index="5" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="e1"> 
+</item> 
+<item evaluation="2.0" index="2" value="e2"> 
+</item> 
+<item evaluation="3.0" index="3" value="e3"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="f" index="6" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="f1"> 
+</item> 
+<item evaluation="2.0" index="2" value="f2"> 
+</item> 
+<item evaluation="3.0" index="3" value="f3"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="g" index="7" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="g1"> 
+</item> 
+<item evaluation="2.0" index="2" value="g2"> 
+</item> 
+<item evaluation="3.0" index="3" value="g3"> 
+</item> 
+</issue> 
+<issue vtype="discrete" name="h" index="8" etype="discrete" type="discrete"> 
+<item evaluation="1.0" index="1" value="h1"> 
+</item> 
+<item evaluation="2.0" index="2" value="h2"> 
+</item> 
+<item evaluation="3.0" index="3" value="h3"> 
+</item> 
+</issue> 
+<weight index="1" value="0.1567211733921357"> 
 </weight> 
-<weight index="2" value="0.11971415637153429"> 
+<weight index="2" value="0.11957621099642908"> 
 </weight> 
-<weight index="3" value="0.12060020821905948"> 
+<weight index="3" value="0.12049072415658878"> 
 </weight> 
-<weight index="4" value="0.12048281587325514"> 
+<weight index="4" value="0.120404907138163"> 
 </weight> 
-<weight index="5" value="0.121367342291176"> 
+<weight index="5" value="0.12132487401843961"> 
 </weight> 
-<weight index="6" value="0.12035509026154388"> 
+<weight index="6" value="0.12024496867317583"> 
 </weight> 
-<weight index="7" value="0.12023579607158644"> 
+<weight index="7" value="0.12015917844107596"> 
 </weight> 
-<weight index="8" value="0.12111720401260812"> 
+<weight index="8" value="0.12107796318399199"> 
 </weight> 
 </objective> 
 <discount_factor value="1.0"> 
 </discount_factor> 
 <reservation value="0.0"> 
 </reservation> 
+<comparisons> 
+3200
+</comparisons> 
+<errors> 
+0 
+</errors> 
+<experimental> 
+true 
+</experimental> 
 </utility_space> 
