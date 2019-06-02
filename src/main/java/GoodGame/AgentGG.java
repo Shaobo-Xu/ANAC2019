@@ -9,8 +9,13 @@ import genius.core.issue.Issue;
 import genius.core.issue.Value;
 import genius.core.parties.AbstractNegotiationParty;
 import genius.core.parties.NegotiationInfo;
+import genius.gui.session.SessionPanel;
 
-import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.lang.Math.max;
 
@@ -176,17 +181,17 @@ public class AgentGG extends AbstractNegotiationParty {
             double p2 = -0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double possibleRatio = p1 - (p1 - p2) / (0.98 - 0.9) * (time - 0.9);
             this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.2);
-        } else if (time < 0.998){
+        } else if (time < 0.998) {
             // 妥协2
             double p1 = -0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double p2 = -0.25 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double possibleRatio = p1 - (p1 - p2) / (1.0 - 0.98) * (time - 0.98);
             this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.1);
-        }else if (time<0.999){
+        } else if (time < 0.999) {
             // 妥协3
             double possibleRatio = -0.5 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.1);
-        }else{
+        } else {
             this.offerLowerRatio = max(0.5, this.reservationImportanceRatio * 1.1);
         }
         this.offerHigherRatio = this.offerLowerRatio + 0.08;
@@ -301,6 +306,12 @@ public class AgentGG extends AbstractNegotiationParty {
             }
         }
     }
-
+    public static void main(String[] args) {
+        final JFrame gui = new JFrame();
+        gui.setLayout(new BorderLayout());
+        gui.getContentPane().add(new SessionPanel(), BorderLayout.CENTER);
+        gui.pack();
+        gui.setVisible(true);
+    }
 
 }
