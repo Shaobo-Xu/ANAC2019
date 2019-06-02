@@ -9,9 +9,10 @@ import genius.core.issue.Issue;
 import genius.core.issue.Value;
 import genius.core.parties.AbstractNegotiationParty;
 import genius.core.parties.NegotiationInfo;
-import org.junit.Test;
 
 import java.util.*;
+
+import static java.lang.Math.max;
 
 
 /**
@@ -22,6 +23,7 @@ public class AgentGG extends AbstractNegotiationParty {
     private ImpMap impMap;
     private ImpMap opponentImpMap;
     private double offerLowerRatio = 1.0;
+    private double offerHigherRatio = 1.1;
     private double MAX_IMPORTANCE;
     private double MIN_IMPORTANCE;
     private double MEDIAN_IMPORTANCE;
@@ -29,16 +31,18 @@ public class AgentGG extends AbstractNegotiationParty {
     private Bid MIN_IMPORTANCE_BID;
     private double OPPONENT_MAX_IMPORTANCE;
     private double OPPONENT_MIN_IMPORTANCE;
-    private Bid receivedOfferBid;
+    private Bid receivedBid;
     private Bid initialOpponentBid = null;
     private double lastBidValue;
     private double reservationImportanceRatio;
 
+    private double startTime;
+    private boolean maxOppoBidImpForMeGot = false;
+    private double maxOppoBidImpForMe;
+    private double estimatedNashPoint;
+    private Bid lastReceivedBid;
     private boolean initialTimePass = false;
-    private double ratioBase;
-    private Boolean collectingOpponentOffer = true;
-    private int numberOfOffers = 0;
-    private int numberOfIssues = 0;
+
 
     @Override
     public void init(NegotiationInfo info) {
@@ -48,15 +52,13 @@ public class AgentGG extends AbstractNegotiationParty {
         this.impMap = new ImpMap(userModel);
         this.opponentImpMap = new ImpMap(userModel);
 
-        // 我的importance map
+
+        // 更新我的importance map
         this.impMap.self_update(userModel);
 
         // 获取最大、最小、中位数bid
         this.getMaxAndMinBid();
         this.getMedianBid();
-
-        // 获取issue数量
-        this.numberOfIssues = this.getDomain().getIssues().size();
 
         // 获取reservation value，折算为importance的百分比
         this.reservationImportanceRatio = this.getReservationRatio();
@@ -74,121 +76,39 @@ public class AgentGG extends AbstractNegotiationParty {
     public Action chooseAction(List<Class<? extends Action>> list) {
         double time = getTimeLine().getTime();
 
-        if (!(getLastReceivedAction() instanceof Offer)) return new Offer(getPartyId(), this.MAX_IMPORTANCE_BID);
+        // 开始比赛
+        if (!(this.getLastReceivedAction() instanceof Offer)) return new Offer(getPartyId(), this.MAX_IMPORTANCE_BID);
 
-        double impRatioForMe = (this.impMap.getImportance(this.receivedOfferBid) - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
+        // 对方报价对我来说的importance ratio
+        double impRatioForMe = (this.impMap.getImportance(this.receivedBid) - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
 
         // 接受报价的条件，即高于我的threshold
         if (impRatioForMe >= this.offerLowerRatio) {
             System.out.println("\n\naccepted agent: Agent" + this.getPartyId());
-            System.out.println("last bid: " + this.receivedOfferBid);
+            System.out.println("last bid: " + this.receivedBid);
             System.out.println("\ncurrent threshold: " + this.offerLowerRatio);
             System.out.println("\n\n");
-            return new Accept(this.getPartyId(), this.receivedOfferBid);
+            return new Accept(this.getPartyId(), this.receivedBid);
         }
 
-        // 时间小于0.32时，保持高报价，并收集对手信息
-        if (time < 0.32) {
-//                // 一开始对方可能会一直报最高价，这个没什么用，会影响我们的map建立，因此直到对方发不重复的才开始记录
-//                if (initialOpponentBid == null) {
-//                    initialOpponentBid = receivedOfferBid;
-//                    this.opponentImpMap.opponent_update(this.receivedOfferBid);
-//                } else {
-//                    if (receivedOfferBid != initialOpponentBid) {
-//                        initialTimePass = true;
-//                    }
-//                }
-//                if (initialTimePass) {
-//                    this.opponentImpMap.opponent_update(this.receivedOfferBid);
-//                }
+        // 对手importance为1.0左右时，己方大致可以拿到多少。即寻找Pareto边界的端点
+        if (!maxOppoBidImpForMeGot) this.getMaxOppoBidImpForMe(time, 10.0 / 1000.0);
 
-            this.opponentImpMap.opponent_update(this.receivedOfferBid);
+        // 更新对手importance表
+        this.opponentImpMap.opponent_update(this.receivedBid);
 
-            // 前0.08时间内报最高价，为了适应一些特殊的domain
-            if (time < 0.02) {
-                this.offerLowerRatio = 1.0;
-            } else {
-                // 0.08~0.32时间内保持高报价
-                this.offerLowerRatio = 1.0 - 1.2 * (time - 0.08) * (time - 0.08) - 17. / 375. * (time - 0.08);
-            }
-        } else {
-            // 在0.32时，运行一下计算
-            if (this.collectingOpponentOffer) {
-                this.collectingOpponentOffer = false;
-                System.out.println("\n\nmy sorted importance map: ");
-                for (List<impUnit> impUnitList : this.impMap.values()) {
-                    System.out.println(impUnitList);
-                }
+        // 策略
+        this.getThreshold(time);
 
-                // 大致找出对手utility最高的Pareto边界的threshold
-                HashMap<Integer, Value> lValues = new HashMap<>();
-                for (Map.Entry<Issue, List<impUnit>> entry : this.impMap.entrySet()) {
-                    Issue currentIssue = entry.getKey();
-                    List<impUnit> myImpList = entry.getValue();
-                    List<impUnit> opponentImpList = opponentImpMap.get(currentIssue);
-                    Value value = opponentImpList.get(0).valueOfIssue;
-                    boolean value_got = false;
-                    for (impUnit opponentUnit : opponentImpList) {
-                        if (opponentUnit.meanWeightSum / opponentImpList.get(0).meanWeightSum > 0.8) {
-                            for (impUnit myUnit : myImpList) {
-                                if (myUnit.meanWeightSum / myImpList.get(0).meanWeightSum > 0.85) {
-                                    if (myUnit.valueOfIssue.toString().equals(opponentUnit.valueOfIssue.toString())) {
-                                        value = opponentUnit.valueOfIssue;
-                                        value_got = true;
-                                    }
-                                }
-                            }
-                        }
-                        if (value_got) break;
-                    }
-                    int issueNumber = currentIssue.getNumber();
-                    lValues.put(issueNumber, value);
-                }
-                Bid bestOpponentBid = new Bid(this.getDomain(), lValues);
-                double bestOpponentBidImportance = this.impMap.getImportance(bestOpponentBid);
-                System.out.println("\nbestOpponentBid: " + bestOpponentBid);
-                System.out.println("bestOpponentBidImportance: " + bestOpponentBidImportance);
-                System.out.println("\nopponent's sorted importance map: ");
-                for (List<impUnit> impUnitList : this.opponentImpMap.values()) {
-                    System.out.println(impUnitList);
-                }
+        System.out.println("high threshold: " + this.offerHigherRatio);
+        System.out.println("low threshold: " + this.offerLowerRatio);
+        System.out.println("estimated nash: " + this.estimatedNashPoint);
+        System.out.println("reservation: " + this.reservationImportanceRatio);
+        System.out.println();
 
-                // 根据找到的最小的Pareto边界以及最大的值为1的边界，计算出中心偏自己位置的点的threshold
-                this.ratioBase = 0.6 + 0.4 * (bestOpponentBidImportance - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
-                System.out.println("\nbestOpponentBid ratio: " + this.ratioBase);
-
-                // 更新对手最大、最小bid
-                this.getOpponentMaxAndMinBid();
-            }
-            // time>0.32,正式谈判
-            if (time < 0.92) {
-                this.numberOfOffers += 1;  // 统计一下bid在0.32~0.92的时间内的发放速度，
-                this.offerLowerRatio = 0.92 - 0.5 * (time - 0.32) * (time - 0.32) + (time - 0.32) * (10. / 6. * this.ratioBase - 37. / 30.);
-            } else if (time < 1.0 - 50 * 0.6 / this.numberOfOffers) {
-                // 记下0.92~0.99* 时间内的对方给的最佳bid
-                double currentValueOfOpponent = impMap.getImportance(receivedOfferBid);
-                if (currentValueOfOpponent > this.lastBidValue) {
-                    this.lastBidValue = currentValueOfOpponent;
-                }
-            } else if (time < 1.0 - 20 * 0.6 / this.numberOfOffers) {
-                // 在倒数20~50轮内收集对手给的最好的报价并接受
-                if (impMap.getImportance(receivedOfferBid) > 1.0 * this.lastBidValue) {
-                    System.out.println("compromise1");
-                    return new Accept(getPartyId(), receivedOfferBid);
-                }
-            } else {
-                // 在倒数20轮内收集对手给的最好的报价并接受
-                if (impMap.getImportance(receivedOfferBid) > 0.95 * this.lastBidValue) {
-                    System.out.println("compromise2");
-                    return new Accept(getPartyId(), receivedOfferBid);
-                }
-            }
-        }
-        double offerUpperRatio = this.offerLowerRatio + 0.05;
-
-        Bid bid = getNeededRandomBid(this.offerLowerRatio, offerUpperRatio);
+        Bid bid = getNeededRandomBid(this.offerLowerRatio, this.offerHigherRatio);
+        this.lastReceivedBid = this.receivedBid;
         return new Offer(getPartyId(), bid);
-
     }
 
     @Override
@@ -196,7 +116,7 @@ public class AgentGG extends AbstractNegotiationParty {
         super.receiveMessage(sender, act);
         if (act instanceof Offer) {
             Offer offer = (Offer) act;
-            this.receivedOfferBid = offer.getBid();
+            this.receivedBid = offer.getBid();
         }
     }
 
@@ -205,6 +125,76 @@ public class AgentGG extends AbstractNegotiationParty {
         return "Well Played";
     }
 
+    /**
+     * 获取对方utility为1.0左右时我方的最优值（Pareto最优边界点）
+     * 对方可能先报几次最高的相同bid，忽视，当不同时候开始计时。在持续时间内（如20轮），选择对我来说最高importance的bid。
+     * 由于此时对方的bid对对方而言importance一定很高，因此可以满足我方要求。
+     */
+    private void getMaxOppoBidImpForMe(double time, double timeLast) {
+        double thisBidImp = this.impMap.getImportance(this.receivedBid);
+        if (thisBidImp > this.maxOppoBidImpForMe) this.maxOppoBidImpForMe = thisBidImp;
+
+        if (this.initialTimePass) {
+            if (time - this.startTime > timeLast) {
+                double maxOppoBidRatioForMe = (this.maxOppoBidImpForMe - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
+                this.estimatedNashPoint = (1 - maxOppoBidRatioForMe) / 1.7 + maxOppoBidRatioForMe; // 1.414 是圆，2是直线
+                this.maxOppoBidImpForMeGot = true;
+            }
+        } else {
+            if (this.lastReceivedBid != this.receivedBid) {
+                this.initialTimePass = true;
+                this.startTime = time;
+            }
+        }
+    }
+
+    /**
+     * 根据时间获取阈值上下限
+     */
+    private void getThreshold(double time) {
+        if (time < 0.01) {
+            // 前10轮报0.9999，为了适应部分特殊的域
+            this.offerLowerRatio = 0.9999;
+        } else if (time < 0.02) {
+            // 10~20轮报0.99，为了适应部分特殊的域
+            this.offerLowerRatio = 0.99;
+        } else if (time < 0.2) {
+            // 20~200轮报高价，降至0.9
+            this.offerLowerRatio = 0.99 - 0.5 * (time - 0.02);
+        } else if (time < 0.5) {
+            // 200~500轮逐步降低阈值，降至距估计的Nash点0.5
+            double p2 = 0.5 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            this.offerLowerRatio = 0.9 - (0.9 - p2) / (0.5 - 0.2) * (time - 0.2);
+        } else if (time < 0.9) {
+            // 500~900轮快速降低阈值，降至距估计的Nash点
+            double p1 = 0.5 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double p2 = this.estimatedNashPoint;
+            this.offerLowerRatio = p1 - (p1 - p2) / (0.9 - 0.5) * (time - 0.5);
+        } else if (time < 0.98) {
+            // 妥协1
+            double p1 = this.estimatedNashPoint;
+            double p2 = -0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double possibleRatio = p1 - (p1 - p2) / (0.98 - 0.9) * (time - 0.9);
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.2);
+        } else if (time < 0.998){
+            // 妥协2
+            double p1 = -0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double p2 = -0.25 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double possibleRatio = p1 - (p1 - p2) / (1.0 - 0.98) * (time - 0.98);
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.1);
+        }else if (time<0.999){
+            // 妥协3
+            double possibleRatio = -0.5 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.1);
+        }else{
+            this.offerLowerRatio = max(0.5, this.reservationImportanceRatio * 1.1);
+        }
+        this.offerHigherRatio = this.offerLowerRatio + 0.08;
+    }
+
+    /**
+     * 获取reservation value对应到importance matrix中的比例
+     */
     private double getReservationRatio() {
         double medianBidRatio = (this.MEDIAN_IMPORTANCE - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
         return this.utilitySpace.getReservationValue() * medianBidRatio / 0.5;
@@ -254,24 +244,24 @@ public class AgentGG extends AbstractNegotiationParty {
         if (median2 != -1) this.MEDIAN_IMPORTANCE /= 2;
     }
 
-    /**
-     * 更新对手的最大及最小Importance的值及对应OFFER
-     */
-    private void getOpponentMaxAndMinBid() {
-        HashMap<Integer, Value> lValues1 = new HashMap<>();
-        HashMap<Integer, Value> lValues2 = new HashMap<>();
-        for (Map.Entry<Issue, List<impUnit>> entry : this.opponentImpMap.entrySet()) {
-            Value value1 = entry.getValue().get(0).valueOfIssue;
-            Value value2 = entry.getValue().get(entry.getValue().size() - 1).valueOfIssue;
-            int issueNumber = entry.getKey().getNumber();
-            lValues1.put(issueNumber, value1);
-            lValues2.put(issueNumber, value2);
-        }
-        Bid OPPONENT_MAX_IMPORTANCE_BID = new Bid(this.getDomain(), lValues1);
-        Bid OPPONENT_MIN_IMPORTANCE_BID = new Bid(this.getDomain(), lValues2);
-        this.OPPONENT_MAX_IMPORTANCE = this.opponentImpMap.getImportance(OPPONENT_MAX_IMPORTANCE_BID);
-        this.OPPONENT_MIN_IMPORTANCE = this.opponentImpMap.getImportance(OPPONENT_MIN_IMPORTANCE_BID);
-    }
+//    /**
+//     * 更新对手的最大及最小Importance的值及对应OFFER
+//     */
+//    private void getOpponentMaxAndMinBid() {
+//        HashMap<Integer, Value> lValues1 = new HashMap<>();
+//        HashMap<Integer, Value> lValues2 = new HashMap<>();
+//        for (Map.Entry<Issue, List<impUnit>> entry : this.opponentImpMap.entrySet()) {
+//            Value value1 = entry.getValue().get(0).valueOfIssue;
+//            Value value2 = entry.getValue().get(entry.getValue().size() - 1).valueOfIssue;
+//            int issueNumber = entry.getKey().getNumber();
+//            lValues1.put(issueNumber, value1);
+//            lValues2.put(issueNumber, value2);
+//        }
+//        Bid OPPONENT_MAX_IMPORTANCE_BID = new Bid(this.getDomain(), lValues1);
+//        Bid OPPONENT_MIN_IMPORTANCE_BID = new Bid(this.getDomain(), lValues2);
+//        this.OPPONENT_MAX_IMPORTANCE = this.opponentImpMap.getImportance(OPPONENT_MAX_IMPORTANCE_BID);
+//        this.OPPONENT_MIN_IMPORTANCE = this.opponentImpMap.getImportance(OPPONENT_MIN_IMPORTANCE_BID);
+//    }
 
 
     /**
@@ -286,10 +276,10 @@ public class AgentGG extends AbstractNegotiationParty {
         double upperThreshold = upperRatio * (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE) + this.MIN_IMPORTANCE;
         for (int t = 0; t < 3; t++) {
             long k = this.getDomain().getNumberOfPossibleBids();
-            double highest_opponent_importance = 0;
+            double highest_opponent_importance = 0.0;
             Bid returnedBid = null;
             for (int i = 0; i < k; i++) {
-                Bid bid = generateRandomBid();
+                Bid bid = this.generateRandomBid();
                 double bidImportance = this.impMap.getImportance(bid);
                 double bidOpponentImportance = this.opponentImpMap.getImportance(bid);
                 if (bidImportance >= lowerThreshold && bidImportance <= upperThreshold) {
@@ -303,7 +293,13 @@ public class AgentGG extends AbstractNegotiationParty {
                 return returnedBid;
             }
         }
-        return MAX_IMPORTANCE_BID;
+        // 如果出现了问题，没找到合适的bid，就随即返回一个高于下限的
+        while (true) {
+            Bid bid = generateRandomBid();
+            if (this.impMap.getImportance(bid) >= lowerThreshold) {
+                return bid;
+            }
+        }
     }
 
 

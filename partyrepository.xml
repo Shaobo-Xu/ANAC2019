@@ -408,6 +408,21 @@
             <partyRepItem classPath="D:\ANAC2019\bin\GoodGame\AgentGG.class" strategyParameters="">
                 <properties/>
             </partyRepItem>
+            <partyRepItem classPath="D:\ANAC2019\bin\group4\Agent4.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
+            <partyRepItem classPath="D:\ANAC2019\bin\group17\Agent17.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
+            <partyRepItem classPath="D:\ANAC2019\bin\group8\Agent8.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
+            <partyRepItem classPath="D:\ANAC2019\bin\group35\Agent35.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
+            <partyRepItem classPath="D:\ANAC2019\bin\group38\Agent38.class" strategyParameters="">
+                <properties/>
+            </partyRepItem>
         </partyRepItems>
         <domainRepItem/>
         <protocolRepItem/>
