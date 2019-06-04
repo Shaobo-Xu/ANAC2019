@@ -109,7 +109,7 @@ public class AgentGG extends AbstractNegotiationParty {
         // 最后一轮
         if (time >= 0.9989) {
             double ratio = (this.impMap.getImportance(this.receivedBid) - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
-            if (ratio > this.reservationImportanceRatio * 1.2) {
+            if (ratio > this.reservationImportanceRatio + 0.1) {
                 return new Accept(getPartyId(), receivedBid);
             }
         }
@@ -190,22 +190,22 @@ public class AgentGG extends AbstractNegotiationParty {
             double p1 = 0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double p2 = 0.05 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double possibleRatio = p1 - (p1 - p2) / (0.98 - 0.9) * (time - 0.9);
-            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.1);
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.3);
         } else if (time < 0.995) {
             // 妥协2 980~995轮
             double p1 = 0.05 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double p2 = 0.0 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double possibleRatio = p1 - (p1 - p2) / (0.995 - 0.98) * (time - 0.98);
-            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.1);
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.2);
         } else if (time < 0.999) {
             // 妥协3 995~999轮
             double p1 = 0.0 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double p2 = -0.3 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double possibleRatio = p1 - (p1 - p2) / (0.998 - 0.995) * (time - 0.995);
-            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.1);
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.15);
         } else {
             double possibleRatio = -0.4 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
-            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.0);
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.1);
         }
         this.offerHigherRatio = this.offerLowerRatio + 0.1;
     }
