@@ -40,6 +40,7 @@ public class AgentGG extends AbstractNegotiationParty {
     private Bid initialOpponentBid = null;
     private double lastBidValue;
     private double reservationImportanceRatio;
+    private boolean offerRandomly = true;
 
     private double startTime;
     private boolean maxOppoBidImpForMeGot = false;
@@ -179,6 +180,7 @@ public class AgentGG extends AbstractNegotiationParty {
             double p2 = 0.5 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             this.offerLowerRatio = 0.9 - (0.9 - p2) / (0.5 - 0.2) * (time - 0.2);
         } else if (time < 0.9) {
+            this.offerRandomly = false;
             // 500~900轮快速降低阈值，降至距估计的Nash点0.2
             double p1 = 0.5 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double p2 = 0.2 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
@@ -195,7 +197,7 @@ public class AgentGG extends AbstractNegotiationParty {
             double p2 = 0.0 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double possibleRatio = p1 - (p1 - p2) / (0.995 - 0.98) * (time - 0.98);
             this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio * 1.35);
-        } else if (time < 0.998) {
+        } else if (time < 0.999) {
             // 妥协3 995~999轮
             double p1 = 0.0 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double p2 = -0.3 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
@@ -299,6 +301,7 @@ public class AgentGG extends AbstractNegotiationParty {
                 double bidImportance = this.impMap.getImportance(bid);
                 double bidOpponentImportance = this.opponentImpMap.getImportance(bid);
                 if (bidImportance >= lowerThreshold && bidImportance <= upperThreshold) {
+                    if (this.offerRandomly) return bid;
                     if (bidOpponentImportance > highest_opponent_importance) {
                         highest_opponent_importance = bidOpponentImportance;
                         returnedBid = bid;
@@ -317,6 +320,7 @@ public class AgentGG extends AbstractNegotiationParty {
             }
         }
     }
+
     public static void main(String[] args) {
         final JFrame gui = new JFrame();
         gui.setLayout(new BorderLayout());
