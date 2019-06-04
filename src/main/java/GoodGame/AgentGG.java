@@ -98,7 +98,7 @@ public class AgentGG extends AbstractNegotiationParty {
         }
 
         // 对手importance为1.0左右时，己方大致可以拿到多少。即寻找Pareto边界的端点
-        if (!maxOppoBidImpForMeGot) this.getMaxOppoBidImpForMe(time, 10.0 / 1000.0);
+        if (!maxOppoBidImpForMeGot) this.getMaxOppoBidImpForMe(time, 6.0 / 1000.0);
 
         // 更新对手importance表
         if (time < 0.3) this.opponentImpMap.opponent_update(this.receivedBid);
@@ -109,7 +109,7 @@ public class AgentGG extends AbstractNegotiationParty {
         // 最后一轮
         if (time >= 0.9989) {
             double ratio = (this.impMap.getImportance(this.receivedBid) - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
-            if (ratio > this.reservationImportanceRatio + 0.1) {
+            if (ratio > this.reservationImportanceRatio + 0.2) {
                 return new Accept(getPartyId(), receivedBid);
             }
         }
@@ -183,29 +183,29 @@ public class AgentGG extends AbstractNegotiationParty {
         } else if (time < 0.9) {
             // 500~900轮快速降低阈值，降至距估计的Nash点0.2
             double p1 = 0.3 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
-            double p2 = 0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double p2 = 0.15 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             this.offerLowerRatio = p1 - (p1 - p2) / (0.9 - 0.5) * (time - 0.5);
         } else if (time < 0.98) {
             // 妥协1
-            double p1 = 0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
-            double p2 = 0.05 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double p1 = 0.15 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double p2 = 0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double possibleRatio = p1 - (p1 - p2) / (0.98 - 0.9) * (time - 0.9);
             this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.3);
         } else if (time < 0.995) {
             // 妥协2 980~995轮
-            double p1 = 0.05 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
-            double p2 = 0.0 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double p1 = 0.1 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double p2 = 0.05 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
             double possibleRatio = p1 - (p1 - p2) / (0.995 - 0.98) * (time - 0.98);
-            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.2);
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.25);
         } else if (time < 0.999) {
             // 妥协3 995~999轮
-            double p1 = 0.0 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
-            double p2 = -0.3 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
-            double possibleRatio = p1 - (p1 - p2) / (0.998 - 0.995) * (time - 0.995);
-            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.15);
+            double p1 = 0.05 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double p2 = -0.2 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            double possibleRatio = p1 - (p1 - p2) / (0.9989 - 0.995) * (time - 0.995);
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.25);
         } else {
-            double possibleRatio = -0.4 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
-            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.1);
+            double possibleRatio = -0.35 * (1 - this.estimatedNashPoint) + this.estimatedNashPoint;
+            this.offerLowerRatio = max(possibleRatio, this.reservationImportanceRatio + 0.2);
         }
         this.offerHigherRatio = this.offerLowerRatio + 0.1;
     }
