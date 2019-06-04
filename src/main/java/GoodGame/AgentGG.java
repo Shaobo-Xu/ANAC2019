@@ -9,8 +9,13 @@ import genius.core.issue.Issue;
 import genius.core.issue.Value;
 import genius.core.parties.AbstractNegotiationParty;
 import genius.core.parties.NegotiationInfo;
+import genius.gui.session.SessionPanel;
 
-import java.util.*;
+import javax.swing.*;
+import java.awt.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.lang.Math.max;
 
@@ -312,6 +317,12 @@ public class AgentGG extends AbstractNegotiationParty {
             }
         }
     }
-
+    public static void main(String[] args) {
+        final JFrame gui = new JFrame();
+        gui.setLayout(new BorderLayout());
+        gui.getContentPane().add(new SessionPanel(), BorderLayout.CENTER);
+        gui.pack();
+        gui.setVisible(true);
+    }
 
 }
