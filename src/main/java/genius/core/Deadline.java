@@ -25,15 +25,16 @@ public class Deadline implements Serializable {
 	private final DeadlineType type;
 
 	/**
-	 * Default timeout in seconds
+	 * Default timeout in seconds; also used as the realtime timeout 
+	 * to abort the round-based negotiations.
 	 */
-	private final static Integer DEFAULT_TIME_OUT = 180;
+	private final static Integer DEFAULT_TIME_OUT = 60;
 
 	/**
 	 * Create default value.
 	 */
 	public Deadline() {
-		value = 180;
+		value = DEFAULT_TIME_OUT;
 		type = DeadlineType.TIME;
 	};
 

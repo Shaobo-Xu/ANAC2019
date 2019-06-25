@@ -25,7 +25,7 @@ import genius.core.listener.Listener;
  */
 @SuppressWarnings("serial")
 public class DeadlinePanel extends JPanel {
-	private final SpinnerNumberModel valuemodel = new SpinnerNumberModel(180, 1,
+	private final SpinnerNumberModel valuemodel = new SpinnerNumberModel(60, 1,
 			10000, 10);
 	private JSpinner spinner = new JSpinner(valuemodel);
 	private JComboBox<DeadlineType> combobox = new JComboBox<DeadlineType>(

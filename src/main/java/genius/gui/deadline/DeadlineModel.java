@@ -10,7 +10,7 @@ import genius.core.listener.DefaultListenable;
 public class DeadlineModel extends DefaultListenable<DeadlineModel> {
 
 	// default values.
-	private Integer value = 180;
+	private Integer value = 60;
 	private DeadlineType type = DeadlineType.ROUND;
 
 	public void setValue(Integer value) {

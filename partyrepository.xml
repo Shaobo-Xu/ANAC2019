@@ -9,6 +9,11 @@
             <partyRepItem classPath="group1.Agent1" strategyParameters="">
                 <properties/>
             </partyRepItem>
+
+            <partyRepItem classPath="WellPlayed.AgentWP" strategyParameters="">
+                <properties/>
+            </partyRepItem>
+
             <partyRepItem classPath="negotiator.parties.BoulwareNegotiationParty" strategyParameters="">
                 <properties/>
             </partyRepItem>

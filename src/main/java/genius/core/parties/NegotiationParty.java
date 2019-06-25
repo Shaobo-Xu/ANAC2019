@@ -1,8 +1,10 @@
 package genius.core.parties;
 
-import java.io.Serializable;
 import java.util.List;
+
 import java.util.Map;
+
+import java.io.Serializable;
 
 import genius.core.AgentID;
 import genius.core.Bid;
@@ -51,7 +53,7 @@ import genius.core.xml.XmlWriteStream;
  * functions may be limited to a deadline as set in the actual settings for the
  * negotiation. In that case, the deadline is a global deadline for which the
  * entire negotiation session must be completed. If the deadline is round based,
- * the session is usually also time-limited to 180 seconds, to ensure that even
+ * the session is usually also time-limited to DEFAULT_TIME_OUT seconds, to ensure that even
  * in a round-based negotiation, the negotiotion will end in a reasonable time.
  * </p>
  */

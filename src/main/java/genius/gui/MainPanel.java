@@ -35,7 +35,7 @@ public class MainPanel extends JFrame implements GeniusAppInterface {
 
 	public MainPanel() {
 		setLayout(new BorderLayout());
-		setMinimumSize(new Dimension(1600, 1200));
+		setMinimumSize(new Dimension(1280, 1024));
 		String version = getClass().getPackage().getImplementationVersion();
 		if (version != null)	// if the version is defined in the MANIFEST file, e.g. Genius is in a .jar 
 			setTitle("GENIUS " + version);

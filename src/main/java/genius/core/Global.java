@@ -1,5 +1,11 @@
 package genius.core;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.TimeZone;
+import java.util.regex.Matcher;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,11 +19,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.TimeZone;
-import java.util.regex.Matcher;
 
 import javax.swing.JOptionPane;
 
@@ -457,7 +458,7 @@ public class Global {
 			if (TournamentConfiguration.getBooleanOption("protocolMode", false)) {
 				mode = "rounds";
 			}
-			postFix += "_" + mode + "_" + TournamentConfiguration.getIntegerOption("deadline", 180);
+			postFix += "_" + mode + "_" + TournamentConfiguration.getIntegerOption("deadline", 60);
 		}
 		return postFix;
 	}
