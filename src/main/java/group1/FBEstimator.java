@@ -34,7 +34,7 @@ public class FBEstimator {
 		this.domain = domain;
 		this.utilityFactory = utilityFactory;
 		
-		normUtils();
+//		normUtils();
 		for (Issue issue : domain.getIssues()) {
 			IssueDiscrete issueDiscrete = (IssueDiscrete) issue;
 			Map<Value,Double> valueScores = new HashMap<>();
@@ -80,9 +80,9 @@ public class FBEstimator {
 	}
 	
 	// AHHHH
-	private void normUtils() {
-		utilityFactory.normalizeWeightsByMaxValues2();
-	}
+//	private void normUtils() {
+//		utilityFactory.normalizeWeightsByMaxValues2();
+//	}
 	
 	//This changes the confidence level that the lower item is better than the higher Item
 	//<High Item ,<Low Item, Score> 

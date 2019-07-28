@@ -151,7 +151,7 @@ public class AgentGG extends AbstractNegotiationParty {
         if (this.initialTimePass) {
             if (time - this.startTime > timeLast) {
                 double maxOppoBidRatioForMe = (this.maxOppoBidImpForMe - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
-                this.estimatedNashPoint = (1 - maxOppoBidRatioForMe) / 1.7 + maxOppoBidRatioForMe; // 1.414 是圆，2是直线
+                this.estimatedNashPoint = (1 - maxOppoBidRatioForMe) / 1.7 + maxOppoBidRatioForMe; // 1.414 是圆，2是直线 TODO
                 this.maxOppoBidImpForMeGot = true;
             }
         } else {
@@ -215,7 +215,7 @@ public class AgentGG extends AbstractNegotiationParty {
      */
     private double getReservationRatio() {
         double medianBidRatio = (this.MEDIAN_IMPORTANCE - this.MIN_IMPORTANCE) / (this.MAX_IMPORTANCE - this.MIN_IMPORTANCE);
-        return this.utilitySpace.getReservationValue() * medianBidRatio / 0.5;
+        return this.utilitySpace.getReservationValue() * medianBidRatio / 0.5; // TODO
     }
 
     /**
@@ -301,7 +301,8 @@ public class AgentGG extends AbstractNegotiationParty {
                 double bidImportance = this.impMap.getImportance(bid);
                 double bidOpponentImportance = this.opponentImpMap.getImportance(bid);
                 if (bidImportance >= lowerThreshold && bidImportance <= upperThreshold) {
-                    if (this.offerRandomly) return bid; // 前0.2时间随机给bid即可
+                    if (this.offerRandomly) return bid; // 前0.2时间随机给bid即可,
+                    // TODO
                     if (bidOpponentImportance > highest_opponent_importance) {
                         highest_opponent_importance = bidOpponentImportance;
                         returnedBid = bid;
