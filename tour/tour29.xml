@@ -1,0 +1,37 @@
+<multilateralTournamentsConfiguration>
+    <tournaments>
+        <tournament>
+            <deadline>
+                <value>1000</value>
+                <type>ROUND</type>
+            </deadline>
+            <protocolItem classPath="genius.core.protocol.StackedAlternatingOffersProtocol" description="Each agents makes offer, counter-offer, or accepts" hasMediator="false" hasMediatorProfile="false" protocolName="Stacked Alternating Offers Protocol for Multi-Lateral Negotiation (SAOPMN)" />
+            <partyRepItems>
+                <party classPath="agents.anac.y2019.agentgg.AgentGG" />
+                <party classPath="agents.anac.y2019.agentgp.AgentGP" />
+                <party classPath="agents.anac.y2019.agentlarry.AgentLarry" />
+                <party classPath="agents.anac.y2019.dandikagent.dandikAgent" />
+                <party classPath="agents.anac.y2019.eagent.EAgent" />
+                <party classPath="agents.anac.y2019.fsega2019.agent.FSEGA2019" />
+                <party classPath="agents.anac.y2019.garavelagent.GaravelAgent" />
+                <party classPath="agents.anac.y2019.gravity.Gravity" />
+                <party classPath="agents.anac.y2019.harddealer.HardDealer" />
+                <party classPath="agents.anac.y2019.kagent.KAgent" />
+                <party classPath="agents.anac.y2019.kakesoba.KakeSoba" />
+                <party classPath="agents.anac.y2019.minf.MINF" />
+                <party classPath="agents.anac.y2019.podagent.Group1_BOA" />
+                <party classPath="agents.anac.y2019.sacra.SACRA" />
+                <party classPath="agents.anac.y2019.saga.SAGA" />
+                <party classPath="agents.anac.y2019.solveragent.SolverAgent" />
+                <party classPath="agents.anac.y2019.thenewdeal.TheNewDeal" />
+                <party classPath="agents.anac.y2019.winkyagent.winkyAgent" />
+            </partyRepItems>
+            <partyProfileItems>
+            <item url="file:etc/templates/anac/y2011/Grocery/Grocery_domain_sam100.xml" /><item url="file:etc/templates/anac/y2011/Grocery/Grocery_domain_mary50.xml" /></partyProfileItems>
+            <repeats>1</repeats>
+            <numberOfPartiesPerSession>2</numberOfPartiesPerSession>
+            <repetitionAllowed>false</repetitionAllowed>
+            <persistentDataType>DISABLED</persistentDataType>
+        </tournament>
+    </tournaments>
+</multilateralTournamentsConfiguration>
